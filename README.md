@@ -24,6 +24,8 @@ The lesion segmentation pipeline includes:
 
 The dataset (metadata + mask annotations) is hosted at:  
 👉 [Download via Zenodo](https://zenodo.org/...) *(or your link)*
+This project uses the DeepLesion dataset, publicly available from the NIH Clinical Center.
+Please note that this dataset is not released under Apache 2.0. Users must ensure compliance with NIH terms of use: https://nihcc.app.box.com/v/DeepLesion
 
 ## 🚀 Getting Started
 
@@ -31,4 +33,10 @@ The dataset (metadata + mask annotations) is hosted at:
 git clone https://github.com/yourusername/3DLAND.git
 cd 3DLAND
 pip install -r requirements.txt
+
+
+
+📜 License
+
+Code in this repository is licensed under Apache License 2.0.
 
