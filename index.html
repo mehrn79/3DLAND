@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="3DLAND: 3D Lesion Abdominal Anomaly Localization Dataset">
+  <meta name="keywords" content="Medical AI, CT Scan, 3D Segmentation, Anomaly Detection, MICCAI, ICLR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3DLAND: Large-Scale Benchmark</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+
+<section class="hero is-fullheight-with-navbar my-hero-bg">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">3DLAND</h1>
+          <h2 class="subtitle is-3 publication-subtitle">3D Lesion Abdominal Anomaly Localization Dataset</h2>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><strong>Under Review at ICLR 2026</strong></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/YOUR_USERNAME/3DLAND" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+          
+          <div class="hero-visual">
+             <p style="padding: 50px; color: #888; border: 2px dashed #ccc; border-radius: 10px;">
+                <i class="fas fa-cube fa-3x"></i><br>
+                Place your rotating 3D Volume GIF/Video here<br>
+                (Highlights the "3D" nature of the dataset)
+             </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section has-background-white">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      
+      <div class="column">
+        <div class="box stat-box">
+          <span class="icon is-large has-text-info"><i class="fas fa-layer-group fa-2x"></i></span>
+          <p class="title is-4">6,000+</p>
+          <p class="subtitle is-6">CT Volumes</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="box stat-box">
+          <span class="icon is-large has-text-danger"><i class="fas fa-viruses fa-2x"></i></span>
+          <p class="title is-4">20,000+</p>
+          <p class="subtitle is-6">3D Lesion Masks</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="box stat-box">
+          <span class="icon is-large has-text-success"><i class="fas fa-lungs fa-2x"></i></span>
+          <p class="title is-4">7 Organs</p>
+          <p class="subtitle is-6">Multi-Organ Coverage</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="box stat-box">
+          <span class="icon is-large has-text-warning"><i class="fas fa-check-circle fa-2x"></i></span>
+          <p class="title is-4">Expert</p>
+          <p class="subtitle is-6">Validated by Radiologists</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified abstract-text">
+          <p>
+            Existing medical imaging datasets for abdominal CT often lack three-dimensional annotations, 
+            multi-organ coverage, or precise lesion-to-organ associations. 
+            To address this gap, we introduce <strong>3DLAND</strong>, a large-scale benchmark dataset comprising over 
+            <strong>6,000 contrast-enhanced CT volumes</strong> with over <strong>20,000 high-fidelity 3D lesion annotations</strong> 
+            linked to seven abdominal organs: liver, kidneys, pancreas, spleen, stomach, and gallbladder.
+          </p>
+          <p>
+            Our streamlined three-phase pipeline integrates automated spatial reasoning, prompt-optimized 2D segmentation, 
+            and memory-guided 3D propagation, validated by expert radiologists with surface dice scores exceeding 0.75.
+            By providing diverse lesion types and patient demographics, 3DLAND enables scalable evaluation of anomaly detection.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section my-hero-bg">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">The 3DLAND Pipeline</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce a streamlined <strong>Three-Phase Pipeline</strong> to transform 2D bounding boxes into high-fidelity 3D masks.
+          </p>
+        </div>
+        
+        <div class="pipeline-visual">
+            <p style="padding: 80px; color: #888; border: 2px dashed #D97853; border-radius: 10px; background: white;">
+                <i class="fas fa-project-diagram fa-3x"></i><br>
+                Insert <strong>Figure 2</strong> from the paper here<br>
+                (Ideally exported as a high-quality PNG/SVG)
+             </p>
+        </div>
+
+        <br>
+        <div class="columns is-centered">
+            <div class="column">
+                <h4 class="title is-5">Phase I</h4>
+                <p>Lesion-to-Organ Assignment via Spatial Reasoning (MONAI).</p>
+            </div>
+            <div class="column">
+                <h4 class="title is-5">Phase II</h4>
+                <p>Prompt-Optimized 2D Segmentation (MedSAM1 + Center Point).</p>
+            </div>
+            <div class="column">
+                <h4 class="title is-5">Phase III</h4>
+                <p>Memory-Guided 3D Propagation (MedSAM2).</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{3dland2026,
+  title={3DLAND: 3D Lesion Abdominal Anomaly Localization Dataset},
+  author={Anonymous},
+  booktitle={Under Review at ICLR 2026},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website template licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+        Based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="./static/js/index.js"></script>
+</body>
+</html>
