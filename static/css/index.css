@@ -88,6 +88,110 @@ pre {
     border: 1px solid #ddd;
 }
 
+/* --- Styles for Interactive Charts --- */
+.chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px 30px; /* فاصله عمودی و افقی */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.chart-card {
+    background-color: #FDF8F2; /* رنگ پس‌زمینه کارت مشابه تصویر */
+    border: 2px solid #E6CCB2;
+    border-radius: 15px;
+    padding: 30px 20px 20px 20px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.chart-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تب عنوان بالای کارت */
+.chart-header {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D6BCFA; /* پیش‌فرض */
+    padding: 6px 30px;
+    border-radius: 8px 8px 0 0; /* کمی گرد */
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%); /* شکل ذوزنقه */
+    color: #4a3b32;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    white-space: nowrap;
+}
+
+/* رنگ‌های هدر برای هر ارگان (مشابه تصویر) */
+.header-liver { background-color: #D9A695; }
+.header-pancreas { background-color: #D9A695; }
+.header-stomach { background-color: #D9A695; }
+.header-kidney { background-color: #D9A695; }
+.header-spleen { background-color: #D9A695; }
+.header-gallbladder { background-color: #D9A695; }
+
+.bar-row {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 8px;
+    width: 0%; /* شروع انیمیشن از صفر */
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.bar.ours {
+    background-color: #D99E88; /* رنگ آجری روشن مشابه تصویر */
+    z-index: 2;
+}
+
+.bar.other {
+    background-color: #6D7F99; /* رنگ آبی/طوسی مشابه تصویر */
+    z-index: 1;
+}
+
+.bar-label {
+    margin-left: 12px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+    white-space: nowrap;
+}
+
+.bar-label span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* وقتی کلاس active اضافه شود، لیبل‌ها ظاهر می‌شوند */
+.chart-card.active .bar-label {
+    opacity: 1;
+}
+
+.no-dataset {
+    font-weight: 700;
+    color: #333;
+    padding-left: 5px;
+}
+
 /* Footer */
 .footer {
     background-color: var(--color-bg-soft);
