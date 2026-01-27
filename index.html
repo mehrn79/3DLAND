@@ -98,8 +98,17 @@
           <p class="subtitle is-6">Validated by Radiologists</p>
         </div>
       </div>
-
     </div>
+
+    <br>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <figure class="image">
+          <img src="./static/images/stats.png" alt="3DLAND Dataset Statistics and Comparison">
+        </figure>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -119,7 +128,7 @@
           <p>
             Our streamlined three-phase pipeline integrates automated spatial reasoning, prompt-optimized 2D segmentation, 
             and memory-guided 3D propagation, validated by expert radiologists with surface dice scores exceeding 0.75.
-            By providing diverse lesion types and patient demographics, 3DLAND enables scalable evaluation of anomaly detection.
+            By providing diverse lesion types and patient demographics, 3DLAND enables scalable evaluation of anomaly detection, localization, and cross-organ transfer learning.
           </p>
         </div>
       </div>
@@ -138,12 +147,10 @@
           </p>
         </div>
         
-        <div class="pipeline-visual">
-            <p style="padding: 80px; color: #888; border: 2px dashed #D97853; border-radius: 10px; background: white;">
-                <i class="fas fa-project-diagram fa-3x"></i><br>
-                Insert <strong>Figure 2</strong> from the paper here<br>
-                (Ideally exported as a high-quality PNG/SVG)
-             </p>
+        <div class="container is-max-desktop">
+            <figure class="image is-fullwidth">
+              <img src="./static/images/pipeline.png" alt="3DLAND Three-Phase Pipeline Architecture">
+            </figure>
         </div>
 
         <br>
@@ -161,6 +168,25 @@
                 <p>Memory-Guided 3D Propagation (MedSAM2).</p>
             </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+    <div class="content has-text-justified">
+      <p>
+        Comparison of segmentation performance using different prompting strategies on real-world clinical cases. 
+        Our method (<strong>Blue: BBox + Center Point</strong>) achieves the most precise boundaries compared to other strategies, reducing over-segmentation and improving localization accuracy.
+      </p>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <figure class="image">
+          <img src="./static/images/visuals.png" alt="Qualitative Segmentation Results and Prompt Comparison">
+        </figure>
       </div>
     </div>
   </div>
