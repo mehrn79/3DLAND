@@ -192,6 +192,135 @@ pre {
     padding-left: 5px;
 }
 
+.chart-container {
+    display: grid;
+    /* فاصله بین کارت‌ها را کمی کمتر کردیم تا جمع‌وجورتر شود */
+    gap: 35px 20px; 
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* تنظیمات ریسپانسیو (Grid System) */
+
+/* 1. موبایل (پیش‌فرض): تک ستونه */
+.chart-container {
+    grid-template-columns: 1fr;
+}
+
+/* 2. تبلت: دو ستونه */
+@media (min-width: 768px) {
+    .chart-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3. دسکتاپ: سه ستونه (برای ایجاد حالت ۲ ردیف ۳ تایی) */
+@media (min-width: 1024px) {
+    .chart-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* استایل کارت‌ها (کمی padding را بهینه کردیم برای فضای کمتر) */
+.chart-card {
+    background-color: #FDF8F2;
+    border: 2px solid #E6CCB2;
+    border-radius: 12px; /* شعاع گردی کمی کمتر برای ظاهر مدرن‌تر */
+    padding: 25px 15px 15px 15px; /* پدینگ کمتر */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.chart-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تب عنوان بالای کارت */
+.chart-header {
+    position: absolute;
+    top: -14px; /* کمی پایین‌تر آوردیم */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D6BCFA;
+    padding: 4px 20px; /* کوچک‌تر کردن تب هدر */
+    border-radius: 6px 6px 0 0;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    color: #4a3b32;
+    font-weight: 700;
+    font-size: 0.9rem; /* فونت کمی ریزتر */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* رنگ‌های هدر برای هر ارگان */
+.header-liver { background-color: #D9A695; }
+.header-pancreas { background-color: #D9A695; }
+.header-stomach { background-color: #D9A695; }
+.header-kidney { background-color: #D9A695; }
+.header-spleen { background-color: #D9A695; }
+.header-gallbladder { background-color: #D9A695; }
+
+/* تنظیم ردیف بارها */
+.bar-row {
+    margin-bottom: 12px; /* فاصله بین بارها کمتر */
+    display: flex;
+    align-items: center;
+    height: 30px; /* ارتفاع بارها کمی کمتر */
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 6px;
+    width: 0%;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.bar.ours {
+    background-color: #D99E88;
+    z-index: 2;
+}
+
+.bar.other {
+    background-color: #6D7F99;
+    z-index: 1;
+}
+
+/* تنظیم متن لیبل‌ها (فونت ریسپانسیو) */
+.bar-label {
+    margin-left: 8px;
+    font-weight: 800;
+    font-size: 0.9rem; /* فونت کوچک‌تر برای جا شدن در ۳ ستون */
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5s ease 1s;
+    white-space: nowrap;
+}
+
+.bar-label span {
+    font-weight: 600;
+    font-size: 0.75rem; /* فونت اسم دیتاست‌ها ریزتر */
+    color: #666;
+}
+
+.chart-card.active .bar-label {
+    opacity: 1;
+}
+
+.no-dataset {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #333;
+    padding-left: 5px;
+}
+
 /* Footer */
 .footer {
     background-color: var(--color-bg-soft);
